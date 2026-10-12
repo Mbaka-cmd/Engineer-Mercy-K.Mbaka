@@ -1,0 +1,35 @@
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Engineering</p>
+    <h1 class="page-title">Backend systems, and how I think about them.</h1>
+    <p class="lede">What I use, how I decide, and what I am still learning, kept separate on purpose.</p>
+  </header>
+  <a class="article-card" href="idempotency.html">
+    <p class="meta">Article &middot; June 2026 &middot; 4 min read</p>
+    <h3>Why Every Backend Developer Should Understand Idempotency Before Building Payment Systems</h3>
+    <p>The biggest lesson from integrating M-Pesa was not about APIs. It was a distributed-systems idea that changed how I design every backend system.</p>
+    <span class="arrow" style="display:inline-block;margin-top:1rem">Read the article</span>
+  </a>
+  <div class="prose" style="max-width:none">
+    <h2>Technology, by level of evidence</h2>
+  </div>
+  <div class="tiers">
+    <div class="tier"><h3>Used in completed projects<small>Shipped work</small></h3><ul class="tags"><li>Python</li><li>Django</li><li>REST APIs</li><li>JWT</li><li>Role-based access control</li><li>PostgreSQL</li><li>SQLite</li><li>M-Pesa Daraja</li><li>STK Push</li><li>Payment callbacks</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Astro</li></ul></div>
+    <div class="tier"><h3>Current project experience<small>Used in recent or ongoing work</small></h3><ul class="tags"><li>Docker</li><li>Linux</li><li>Nginx</li><li>Gunicorn</li><li>Render</li><li>Redis</li><li>Celery</li><li>WeasyPrint</li><li>Eleventy</li></ul></div>
+    <div class="tier"><h3>Familiar tools and practices<small>Working knowledge</small></h3><ul class="tags"><li>Git and GitHub</li><li>Webhooks</li><li>Metadata and structured data</li><li>Accessibility basics</li><li>Performance basics</li><li>React</li></ul></div>
+    <div class="tier"><h3>Currently learning<small>Not claimed as experience</small></h3><ul class="tags"><li>pytest</li><li>GitHub Actions</li><li>CI/CD</li><li>FastAPI</li><li>OpenAPI</li><li>Observability</li><li>Structured logging</li><li>Advanced PostgreSQL</li></ul></div>
+    <div class="tier"><h3>Planned exploration<small>Next in line</small></h3><ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Cloud infrastructure fundamentals</li></ul></div>
+  </div>
+  <div class="prose" style="max-width:none">
+    <h2>What I pay attention to</h2>
+  </div>
+  <div class="grid3">
+    <div class="cell"><h3>Architecture</h3><p>Clear module boundaries and the simplest structure that fits the requirement.</p></div>
+    <div class="cell"><h3>Databases</h3><p>Relational models, constraints and transactions that protect data integrity.</p></div>
+    <div class="cell"><h3>APIs</h3><p>Validation, consistent errors and permission checks on every route.</p></div>
+    <div class="cell"><h3>Authentication</h3><p>JWT sessions with role-based access control, kept distinct from authorization.</p></div>
+    <div class="cell"><h3>Payments</h3><p>Treat money as a state machine and verify before marking anything paid.</p></div>
+    <div class="cell"><h3>Reliability and deployment</h3><p>Plan for retries and duplicates; configure and deploy deliberately.</p></div>
+  </div>
+  <div class="links" style="margin:2.5rem 0 5rem"><a class="arrow" href="chuka-girls.html">See it applied: the school management case study</a></div>
+</div>

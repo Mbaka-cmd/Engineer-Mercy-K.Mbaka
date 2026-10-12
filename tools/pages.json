@@ -5,5 +5,6 @@
   { "file": "impact.html",  "nav": "Impact & Leadership",  "title": "Impact and Leadership | Mercy Kathomi Mbaka", "desc": "How engineering, institutional reliability, responsible data handling and public-interest technology connect in the work of Mercy Kathomi Mbaka." },
   { "file": "writing.html", "nav": "Writing",              "title": "Beyond the Breakthrough | Mercy Kathomi Mbaka", "desc": "Beyond the Breakthrough: research and original perspectives on the engineering systems behind emerging technology, and what it takes to make them useful and trustworthy." },
   { "file": "contact.html", "nav": "Contact",              "title": "Contact | Mercy Kathomi Mbaka", "desc": "Contact Mercy Kathomi Mbaka about engineering roles, collaboration, organisational projects or research." },
+  { "file": "mwende-paid-twice.html", "nav": "", "title": "The Day Mwende Paid Twice | Mercy Kathomi Mbaka", "desc": "A fictional engineering story about M-Pesa callbacks, duplicate and missing confirmations, and the difference between receiving a payment and recording it correctly." },
   { "file": "404.html",     "nav": "",                     "title": "Page not found | Mercy Kathomi Mbaka", "desc": "This page could not be found.", "base": "https://mbaka-cmd.github.io/Engineer-Mercy-K.Mbaka/", "noindex": true }
 ]

@@ -165,3 +165,22 @@ body.menu-open{overflow:hidden}
 .arch__rel{display:block;color:var(--mauve);font-size:.78rem;margin-top:.15rem}
 .arch__status{font-size:.85rem;color:var(--mauve)!important}
 .arch__openbtn{margin:.25rem 0 1rem}
+/* RABBIT-HOLE */
+.pill{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;padding:.3rem .85rem;border-radius:99px;margin:0 0 1.1rem}
+.trail{padding:clamp(3rem,7vw,5rem) 0 clamp(3rem,7vw,5rem);margin-top:clamp(2.5rem,6vw,4rem);border-top:1px solid var(--line)}
+.trail h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.7rem,1rem + 2.4vw,2.6rem);line-height:1.15;margin:.6rem 0 .8rem;max-width:26ch}
+.trail__list{list-style:none;margin:1.5rem 0 0;padding:0;border-top:1px solid var(--line)}
+.trail__list a{display:grid;gap:.35rem;padding:1.4rem 0;border-bottom:1px solid var(--line);text-decoration:none}
+.trail__list small{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.trail__list b{font-family:var(--font-display);font-weight:500;font-size:clamp(1.25rem,1rem + 1vw,1.7rem);line-height:1.25}
+.trail__list span{color:var(--body);font-size:.95rem;max-width:46rem}
+.trail__list em{color:var(--gold);font-style:normal;font-size:.82rem;letter-spacing:.04em}
+.trail__list a:hover b,.trail__list a:focus-visible b{color:var(--gold)}
+.flow{list-style:none;margin:2rem 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:.75rem;counter-reset:f}
+.flow li{border:1px solid var(--line);padding:1rem .9rem;font-size:.85rem;line-height:1.5;color:var(--body);counter-increment:f}
+.flow li::before{content:counter(f);display:block;color:var(--gold);font-size:.75rem;letter-spacing:.14em;margin-bottom:.4rem}
+.flow b{display:block;color:var(--ivory);font-family:var(--font-display);font-weight:500;font-size:1.05rem;margin-bottom:.3rem}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.flow{grid-template-columns:1fr}}
+.code{background:rgba(0,0,0,.28);border:1px solid var(--line);padding:1rem 1.1rem;overflow-x:auto;font:.82rem/1.6 ui-monospace,Consolas,Menlo,monospace;color:var(--ivory);margin:1.25rem 0;max-width:100%;white-space:pre}
+.code-cap{font-size:.78rem!important;color:var(--mauve)!important;margin:-.6rem 0 1.4rem!important}

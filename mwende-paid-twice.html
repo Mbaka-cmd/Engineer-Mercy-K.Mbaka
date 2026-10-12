@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Day Mwende Paid Twice | Mercy Kathomi Mbaka</title>
+<meta name="description" content="A fictional engineering story about M-Pesa callbacks, duplicate and missing confirmations, and the difference between receiving a payment and recording it correctly."><meta name="author" content="Mercy Mbaka"><meta name="theme-color" content="#351126">
+<link rel="canonical" href="https://mbaka-cmd.github.io/Engineer-Mercy-K.Mbaka/mwende-paid-twice.html">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Mercy Mbaka"><meta property="og:title" content="The Day Mwende Paid Twice | Mercy Kathomi Mbaka"><meta property="og:description" content="A fictional engineering story about M-Pesa callbacks, duplicate and missing confirmations, and the difference between receiving a payment and recording it correctly."><meta property="og:url" content="https://mbaka-cmd.github.io/Engineer-Mercy-K.Mbaka/mwende-paid-twice.html"><meta property="og:image" content="https://mbaka-cmd.github.io/Engineer-Mercy-K.Mbaka/ginprofile.jpg"><meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body id="top">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-solid>
+  <a class="wordmark" href="index.html" aria-label="Mercy Mbaka - home">MERCY MBAKA<span>.</span></a>
+  <nav class="topnav" aria-label="Primary"><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Engineering Work</a></li><li><a href="impact.html">Impact & Leadership</a></li><li><a href="writing.html">Writing</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+  <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span>Menu</span><span class="bars" aria-hidden="true"><i></i><i></i></span></button>
+</header>
+<nav class="menu" id="site-menu" aria-label="Menu" aria-hidden="true">
+  <div class="menu__top">
+    <span class="wordmark">MERCY MBAKA<span>.</span></span>
+    <button class="menu-toggle" id="menu-close" type="button" aria-label="Close menu"><span>Close</span><svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 3l20 20M23 3L3 23"/></svg></button>
+  </div>
+  <div class="menu__nav"><ol class="menu__list">
+    <li style="--i:1"><a href="index.html"><small>01</small>Home</a></li>
+    <li style="--i:2"><a href="about.html"><small>02</small>About</a></li>
+    <li style="--i:3"><a href="work.html"><small>03</small>Engineering Work</a></li>
+    <li style="--i:4"><a href="impact.html"><small>04</small>Impact & Leadership</a></li>
+    <li style="--i:5"><a href="writing.html"><small>05</small>Writing</a></li>
+    <li style="--i:6"><a href="contact.html"><small>06</small>Contact</a></li>
+  </ol></div>
+  <div class="menu__foot">
+    <ul class="menu__social">
+      <li><a href="https://github.com/Mbaka-cmd" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/mercy-mbaka-4b4036354" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a href="https://wa.me/254748077609" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+      <li><a href="mailto:official.mercymbaka@gmail.com">Email</a></li>
+    </ul><span>Kenya</span>
+  </div>
+</nav>
+<div id="page"><main id="main">
+<div class="wrap">
+  <header class="page-head">
+    <p class="pill">The Rabbit Hole &middot; Engineering story</p>
+    <h1 class="page-title">The Day Mwende Paid Twice</h1>
+    <p class="lede">An engineering story about M-Pesa, callbacks, and the difference between receiving a payment and recording it correctly.</p>
+    <p class="note">Fictional scenario. Mwende is an invented character used to illustrate a realistic failure. This is not an account of an incident in any real school or in the School Management SaaS.</p>
+  </header>
+
+  <div class="prose">
+    <p>At 10:14 a.m., Mwende sent her school fees.</p>
+    <p>She was in Form Three. Her mother had sent the money that morning, and Mwende had one job: pay the balance before classes resumed.</p>
+    <p>Her phone vibrated. <em>Payment successful.</em></p>
+    <p>She waited for the school portal to update. Nothing changed. The balance was still there. She refreshed the page, logged out, logged back in. Still unpaid.</p>
+    <p>She did what any worried student would do. She tried again.</p>
+    <p>At 10:17 a.m., a second confirmation arrived. This time the portal updated.</p>
+    <p>Now Mwende had a new problem. The school&rsquo;s system showed one payment. Her phone showed two. Her mother had sent enough for one.</p>
+    <p>And the bursar, looking at a ledger with one entry and a parent insisting she had been charged twice, needed to know what had happened.</p>
+
+    <h2>Two questions hiding inside one incident</h2>
+    <p>At first glance this looks like a payment failure. But there are two separate questions:</p>
+    <ul>
+      <li>Did the mobile-money provider process the transaction?</li>
+      <li>Did our application record that transaction correctly?</li>
+    </ul>
+    <p>They are not the same question. A payment integration is a conversation between systems. One asks, another processes, and a confirmation travels back. Along the way a response can arrive late, a connection can drop, or the same confirmation can be delivered more than once.</p>
+  </div>
+
+  <div class="prose">
+    <h2>Two failures that look alike</h2>
+    <p><strong>A confirmation that never arrives, or is never processed.</strong> The money moved, but the school&rsquo;s records say it did not. The payer sees an unpaid balance and, reasonably, pays again. Mwende&rsquo;s morning looks like this: the first payment was real, and it was not recorded when she needed it to be.</p>
+    <p><strong>A confirmation that arrives twice.</strong> The money moved once, but a system that treats every confirmation as a new payment records it twice. Here the database is wrong even though the money did not move twice.</p>
+    <p>A system that guards against only one of these will fail on the other. The dangerous part is the same in both: the system can look successful while its records tell the wrong story.</p>
+  </div>
+
+  <ol class="flow" aria-label="A safer payment flow">
+    <li><b>Request recorded</b>Before asking the payer to pay, store the request in a pending state.</li>
+    <li><b>Provider processes</b>The provider handles the payment on its side.</li>
+    <li><b>Callback arrives</b>It may be late, repeated, or never come.</li>
+    <li><b>Verify, record once</b>Match it to a known request. Recording the same transaction twice must be impossible.</li>
+    <li><b>Reconcile and inform</b>Check stuck requests with the provider. Tell the payer the truth meanwhile.</li>
+  </ol>
+
+  <div class="prose">
+    <h2>So what should the system do?</h2>
+    <p>The question changes from &ldquo;did the callback say success?&rdquo; to &ldquo;can this transaction be processed safely, even if the same event reaches us late, twice, or not at all?&rdquo; In design terms:</p>
+    <ul>
+      <li><strong>Keep a state for every payment request,</strong> such as initiated, pending, confirmed or failed, so &ldquo;we are waiting&rdquo; is something the system knows.</li>
+      <li><strong>Verify a callback against a request you made</strong> before trusting it.</li>
+      <li><strong>Make recording idempotent.</strong> Use the provider&rsquo;s own transaction reference as a unique key, enforced by the database, and do the work inside one database transaction.</li>
+      <li><strong>Reconcile.</strong> Periodically look for requests stuck in pending and ask the provider what happened, instead of waiting for a callback that may never come.</li>
+      <li><strong>Be honest with the payer.</strong> &ldquo;Payment received, confirming&rdquo; is better than showing an unpaid balance that invites a second payment.</li>
+    </ul>
+    <p>Here is the difference in code. This is illustrative pseudocode, not taken from any real system.</p>
+<pre class="code" tabindex="0"># Fragile: every callback becomes a payment
+def on_callback(cb):
+    if cb.status == "success":
+        Payment.objects.create(amount=cb.amount, ref=cb.reference)
+
+# Safer: a repeat cannot create a second record
+def on_callback(cb):
+    with transaction.atomic():
+        req = PaymentRequest.objects.select_for_update().get(provider_id=cb.request_id)
+        if req.state == "confirmed":
+            return                      # a repeat: nothing more to do
+        verify(cb, req)
+        Payment.objects.create(request=req, provider_ref=cb.reference,
+                               amount=cb.amount)   # provider_ref is UNIQUE
+        req.state = "confirmed"
+        req.save()</pre>
+    <p class="code-cap">Illustrative only. A real implementation also needs authentication of the callback source, amount checks, logging and tests.</p>
+
+    <h2>The lesson behind Mwende&rsquo;s payment</h2>
+    <p>The hardest bugs are not always the ones that crash an application. Some quietly corrupt the information people rely on. A student sees an unpaid balance. A parent sees money deducted. A bursar sees a ledger entry. Each sees a different fragment of the same event, and the system has to bring those fragments back into agreement.</p>
+    <blockquote class="quote"><p>A successful API response is an event. Trust comes from knowing what happened before it, and what the system did after it.</p><cite>Mercy Mbaka</cite></blockquote>
+    <p class="note">Engineering note: this article describes design principles for payment workflows. It does not claim that every safeguard above is implemented in the School Management SaaS. What is implemented will be documented in a case study once verified against the source.</p>
+    <div class="links">
+      <a class="arrow" href="work.html#architecture">See the system architecture</a>
+      <a class="arrow" href="impact.html#rabbit-hole">Back to the engineering trail</a>
+      <a class="arrow" href="writing.html">More writing</a>
+    </div>
+  </div>
+</div>
+<footer class="site-footer"><div class="wrap">
+  <div><a class="wordmark" href="index.html">MERCY MBAKA<span>.</span></a><p>Founder and software engineer, Kenya.</p><p>Founder of Adalyn Technologies, an operating name rather than a registered company.</p></div>
+  <div>
+    <ul><li><a href="https://github.com/Mbaka-cmd" target="_blank" rel="noopener noreferrer">GitHub</a></li><li><a href="https://www.linkedin.com/in/mercy-mbaka-4b4036354" target="_blank" rel="noopener noreferrer">LinkedIn</a></li><li><a href="Mercy_Mbaka_CV.pdf" download>CV</a></li><li><a href="Mercy_Mbaka_Resume.pdf" download>Resume</a></li></ul>
+    <p>Business software services: <a href="https://adalyntechnologies.co.ke/" target="_blank" rel="noopener noreferrer" style="color:var(--bronze)">adalyntechnologies.co.ke</a></p>
+    <p>&copy; 2026 Mercy K. Mbaka</p>
+  </div>
+</div></footer>
+</main></div>
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
