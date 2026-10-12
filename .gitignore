@@ -14,3 +14,12 @@ assets/js/main.js
 assets/css/main.css
 _tpl/
 .vscode/
+
+src/chuka-girls.body.html
+src/creator.body.html
+src/design.body.html
+src/engineering.body.html
+src/founder.body.html
+src/idempotency.body.html
+src/interests.body.html
+src/services.body.html
