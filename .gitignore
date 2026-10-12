@@ -1,0 +1,7 @@
+﻿*.bak-*
+_projects-section-dump.html
+_css-projects-block-dump.txt
+
+# local working files
+_old/
+recovery-backup-*/

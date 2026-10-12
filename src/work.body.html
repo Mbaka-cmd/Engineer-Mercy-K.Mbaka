@@ -1,0 +1,39 @@
+<div class="wrap">
+  <header class="page-head">
+    <p class="eyebrow">Engineering Work</p>
+    <h1 class="page-title">Two systems, examined in depth.</h1>
+    <p class="lede">I feature two projects. Detailed case studies will follow once each implementation detail has been verified against the source.</p>
+  </header>
+  <article class="row">
+    <img src="chuka g dashboard.jpg" width="1362" height="594" alt="Dashboard of the school management system">
+    <div>
+      <p class="eyebrow">Project one<span class="status">Live</span></p>
+      <h2>School Management SaaS</h2>
+      <p>A multi-tenant school management platform covering student administration, fees and M-Pesa payment workflows, attendance, examinations, library management, timetables and reports, with four role-based portals.</p>
+      <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>REST APIs</li><li>JWT</li><li>M-Pesa Daraja</li></ul>
+      <div class="links"><a class="arrow" href="https://school-management-system-final-1.onrender.com/" target="_blank" rel="noopener noreferrer">Live system</a></div>
+    </div>
+  </article>
+  <section class="arch" id="architecture" aria-labelledby="arch-title">
+    <p class="eyebrow">School Management SaaS</p>
+    <h2 class="arch__title" id="arch-title">Inside the Architecture</h2>
+    <p class="lede">Explore how the system&rsquo;s operational domains connect&mdash;from student and academic records to fee payments, school resources and the engineering controls supporting them.</p>
+    <div class="arch__stage" id="arch-stage" role="group" aria-label="Interactive 3D architecture model. The same content is available in the list below." hidden></div>
+    <p class="note">This is a conceptual architecture. Relationships show how the domains depend on each other; they are not database schemas. Model names, cardinalities and guarantees will be added only after they are verified against the source code.</p>
+    <div class="arch__layout"><ul class="arch__nodes" id="arch-nodes"></ul><div class="arch__detail" id="arch-detail" aria-live="polite"></div></div>
+    <noscript><p class="note">JavaScript is needed for the interactive explorer. In summary: a school (tenant) scopes six operational domains &mdash; People &amp; Identity, Academic Structure, Learning &amp; Assessment, Fees &amp; Payments, School Resources and Communication &mdash; all supported by engineering controls such as tenant isolation, authorization, validation, auditability, transactions and background processing.</p></noscript>
+    <script src="assets/js/arch-data.js?v=2" defer></script>
+    <script src="assets/js/arch.js?v=2" defer></script>
+  </section>
+  <article class="row">
+    <div class="plate" role="img" aria-label="Salama Kenya">Salama Kenya</div>
+    <div>
+      <p class="eyebrow">Project two<span class="status status--soft">In development</span></p>
+      <h2>Salama Kenya</h2>
+      <p>A missing-person public-alert platform. The design question is how sensitive information is verified, published, corrected and withdrawn responsibly, while protecting privacy and preventing abuse.</p>
+      <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>Case lifecycle</li><li>Verification</li></ul>
+    </div>
+  </article>
+  <p class="note">Capabilities are described as implemented only after they are verified. Until the case studies are published, nothing here claims outcomes, users or measured impact.</p>
+  <p class="links" style="margin-bottom:5rem"><a class="arrow" href="impact.html">Impact &amp; Leadership</a><a class="arrow" href="writing.html">Writing</a></p>
+</div>

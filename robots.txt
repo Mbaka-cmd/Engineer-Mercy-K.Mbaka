@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mbaka-cmd.github.io/Engineer-Mercy-K.Mbaka/sitemap.xml
