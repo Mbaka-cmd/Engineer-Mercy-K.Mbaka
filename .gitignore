@@ -5,3 +5,12 @@ _css-projects-block-dump.txt
 # local working files
 _old/
 recovery-backup-*/
+
+index.legacy.html
+chuka-girls.html
+idempotency.html
+main.js
+assets/js/main.js
+assets/css/main.css
+_tpl/
+.vscode/
