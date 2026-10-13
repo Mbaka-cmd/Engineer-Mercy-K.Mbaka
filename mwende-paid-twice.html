@@ -58,16 +58,20 @@
     <p>And the bursar, looking at a ledger with one entry and a parent insisting she had been charged twice, needed to know what had happened.</p>
 
     </div>
-  <figure class="explainer" id="explainer" hidden>
-    <video id="explainer-video" controls preload="metadata" playsinline data-src="assets/video/mwende-idempotency.mp4" aria-describedby="explainer-cap"></video>
-    <figcaption id="explainer-cap">The Payment That Arrived Twice. A fictional visualisation of one principle. It is not a recording of any real system.</figcaption>
-    <details class="explainer__text"><summary>Text version of the video</summary>
+  <figure class="flow3d" id="flow3d" aria-labelledby="flow3d-title">
+    <p class="eyebrow">Watch it happen</p>
+    <h2 class="flow3d__title" id="flow3d-title">One payment. Two callbacks.</h2>
+    <p class="lede">A 3D model of the duplicate-callback failure. Switch between a handler with no duplicate check and one with an idempotency check, then drag the scene to look around.</p>
+    <div class="flow3d__controls" id="flow3d-controls"></div>
+    <div class="flow3d__stage" id="flow3d-stage" role="group" aria-label="3D animated model of one payment producing two identical callbacks" hidden></div>
+    <p class="flow3d__cap" id="flow3d-cap" role="status" aria-live="polite"></p>
+    <p class="note">Fictional model with an invented transaction reference. It illustrates one principle and is not a recording of any real system. It shows the duplicate-callback failure; a lost callback also needs reconciliation.</p>
+    <details class="explainer__text" id="flow3d-text"><summary>Text version</summary>
       <ol>
         <li>Mwende pays her school fees from her phone.</li>
         <li>The payment succeeds, but the school portal has not updated yet.</li>
         <li>One payment produces two identical callbacks carrying the same fictional reference, TXN-80421.</li>
-        <li>The first callback is verified against a known payment request and recorded once. The duplicate is recognised and acknowledged, and no second record is created.</li>
-        <li>The portal shows one confirmed payment.</li>
+        <li>Without a duplicate check, each callback becomes a payment record, so the ledger shows two payments. With an idempotency check, the first callback is verified and recorded once, and the duplicate is acknowledged without creating a record.</li>
         <li>The principle: the same event can arrive again, but the same payment must not be recorded again.</li>
       </ol>
     </details>
@@ -159,6 +163,7 @@ def on_callback(cb):
     </div>
   </div>
   <script src="assets/js/demo.js?v=1" defer></script>
+  <script src="assets/js/flow3d.js?v=1" defer></script>
 </div>
 <footer class="site-footer"><div class="wrap">
   <div><a class="wordmark" href="index.html">MERCY MBAKA<span>.</span></a><p>Founder and software engineer, Kenya.</p><p>Founder of Adalyn Technologies, an operating name rather than a registered company.</p></div>

@@ -214,3 +214,25 @@ body.menu-open{overflow:hidden}
 .demo__col li.is-dup{border-left-color:#7fb2e5}
 .demo__col li.is-bad{border-left-color:#e58f8f}
 .demo__result{margin:1.25rem 0 .5rem;font-family:var(--font-display);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.4;min-height:2.8em}
+/* FLOW3D-V1 */
+.flow3d{margin:3rem 0}
+.flow3d__title{font-family:var(--font-display);font-weight:500;font-size:clamp(1.6rem,1rem + 2vw,2.4rem);line-height:1.2;margin:.5rem 0 .8rem}
+.flow3d .lede{font-size:1rem;margin-bottom:1.25rem}
+.flow3d__controls{display:flex;flex-wrap:wrap;gap:.6rem 1.25rem;align-items:center;margin:0 0 1rem}
+.flow3d__controls fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+.flow3d__controls label{display:flex;align-items:center;gap:.4rem;min-height:36px;color:var(--ivory);cursor:pointer}
+.flow3d__controls input{accent-color:var(--gold)}
+.flow3d__controls input[type=range]{width:min(14rem,100%)}
+.flow3d__btn{min-height:44px;padding:.5rem 1rem;font-size:.78rem}
+.flow3d__btn:disabled{opacity:.4;cursor:not-allowed}
+.flow3d__stage{position:relative;height:clamp(340px,50vw,520px);background:rgba(0,0,0,.24);border:1px solid var(--line);overflow:hidden}
+.flow3d__stage canvas{display:block;width:100%;height:100%;touch-action:pan-y;cursor:grab}
+.flow3d__loading{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--mauve);font-size:.85rem}
+.flow3d__label{position:absolute;left:0;top:0;max-width:9rem;text-align:center;font-size:.64rem;line-height:1.25;letter-spacing:.1em;text-transform:uppercase;color:var(--ivory);text-shadow:0 1px 3px rgba(0,0,0,.85);pointer-events:none}
+.flow3d__label small{display:block;text-transform:none;letter-spacing:.02em;color:var(--gold);font-size:.7rem}
+.flow3d__label small:empty{display:none}
+.flow3d__label.is-off{visibility:hidden}
+.flow3d__hud{position:absolute;left:1rem;top:.75rem;font-size:.76rem;line-height:1.5;color:var(--body);pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.85)}
+.flow3d__hud b{color:var(--gold);font-weight:600}
+.flow3d__cap{min-height:4.2em;margin:1rem 0 .5rem;font-family:var(--font-display);font-size:clamp(1.1rem,1rem + .5vw,1.35rem);line-height:1.4}
+@media(max-width:560px){.flow3d__label.is-minor{display:none}.flow3d__label{font-size:.56rem;max-width:5.5rem}.flow3d__hud{font-size:.68rem}}
