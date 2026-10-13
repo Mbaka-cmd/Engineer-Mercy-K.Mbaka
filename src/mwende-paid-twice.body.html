@@ -16,6 +16,22 @@
     <p>Now Mwende had a new problem. The school&rsquo;s system showed one payment. Her phone showed two. Her mother had sent enough for one.</p>
     <p>And the bursar, looking at a ledger with one entry and a parent insisting she had been charged twice, needed to know what had happened.</p>
 
+    </div>
+  <figure class="explainer" id="explainer" hidden>
+    <video id="explainer-video" controls preload="metadata" playsinline data-src="assets/video/mwende-idempotency.mp4" aria-describedby="explainer-cap"></video>
+    <figcaption id="explainer-cap">The Payment That Arrived Twice. A fictional visualisation of one principle. It is not a recording of any real system.</figcaption>
+    <details class="explainer__text"><summary>Text version of the video</summary>
+      <ol>
+        <li>Mwende pays her school fees from her phone.</li>
+        <li>The payment succeeds, but the school portal has not updated yet.</li>
+        <li>One payment produces two identical callbacks carrying the same fictional reference, TXN-80421.</li>
+        <li>The first callback is verified against a known payment request and recorded once. The duplicate is recognised and acknowledged, and no second record is created.</li>
+        <li>The portal shows one confirmed payment.</li>
+        <li>The principle: the same event can arrive again, but the same payment must not be recorded again.</li>
+      </ol>
+    </details>
+  </figure>
+  <div class="prose">
     <h2>Two questions hiding inside one incident</h2>
     <p>At first glance this looks like a payment failure. But there are two separate questions:</p>
     <ul>
@@ -32,6 +48,28 @@
     <p>A system that guards against only one of these will fail on the other. The dangerous part is the same in both: the system can look successful while its records tell the wrong story.</p>
   </div>
 
+  <section class="demo" id="demo" aria-labelledby="demo-title">
+    <p class="eyebrow">Try it</p>
+    <h2 id="demo-title">What happens when the callback arrives twice?</h2>
+    <p class="lede">A simple model of one payment and its repeated confirmations. The transaction reference and amounts are fictional.</p>
+    <div class="demo__controls">
+      <fieldset><legend>Handler</legend>
+        <label><input type="radio" name="mode" value="naive"> Without idempotency</label>
+        <label><input type="radio" name="mode" value="safe" checked> With idempotency</label>
+      </fieldset>
+      <fieldset><legend>Callback deliveries</legend>
+        <label for="demo-n" class="sr-only">Number of callback deliveries</label>
+        <input type="range" id="demo-n" min="1" max="5" value="2" step="1"> <output id="demo-n-out" for="demo-n">2</output>
+      </fieldset>
+      <div class="demo__btns"><button class="btn btn--solid" id="demo-send" type="button">Send callbacks</button><button class="btn btn--ghost" id="demo-reset" type="button">Reset</button></div>
+    </div>
+    <div class="demo__stage">
+      <div class="demo__col"><h3>Callback deliveries <span id="demo-sent">0</span></h3><ul id="demo-log"></ul></div>
+      <div class="demo__col"><h3>Payment records <span id="demo-count">0</span></h3><ul id="demo-records"></ul></div>
+    </div>
+    <p class="demo__result" id="demo-result" role="status"></p>
+    <p class="note">Teaching model only. Actual payment handling also needs callback verification, transaction-state controls, concurrency safety and reconciliation.</p>
+  </section>
   <ol class="flow" aria-label="A safer payment flow">
     <li><b>Request recorded</b>Before asking the payer to pay, store the request in a pending state.</li>
     <li><b>Provider processes</b>The provider handles the payment on its side.</li>
@@ -79,4 +117,5 @@ def on_callback(cb):
       <a class="arrow" href="writing.html">More writing</a>
     </div>
   </div>
+  <script src="assets/js/demo.js?v=1" defer></script>
 </div>
